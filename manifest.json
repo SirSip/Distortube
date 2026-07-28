@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Distortube",
+  "version": "4.2.0.69",
+  "description":SUFFERING.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "content_scripts": [{
+    "matches": ["https://www.youtube.com/*"],
+    "js": ["content.js"],
+    "css": ["content.css"],
+    "run_at": "document_start"
+  }],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "web_accessible_resources": [{ "resources": ["shaders/*"], "matches": ["https://www.youtube.com/*"] }],
+  "action": { "default_title": "YouTube VHS", "default_popup": "popup.html" }
+}

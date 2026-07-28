@@ -1,0 +1,5 @@
+const defaults={enabled:true,alwaysOn:true,aging:true,intensity:55,noise:32,scanlines:38,rgb:28,glitch:18,tracking:30,blur:14,color:26,agingSpeed:50};
+const labels={intensity:'VHS intensity',noise:'Noise amount',scanlines:'Scanline strength',rgb:'RGB separation',glitch:'Glitch frequency',tracking:'Tracking errors',blur:'Blur amount',color:'Color degradation',agingSpeed:'Aging speed'};
+const root=document.querySelector('#sliders');
+for(const [key,label] of Object.entries(labels)){const row=document.createElement('div');row.className='range';row.innerHTML=`<label for="${key}">${label}</label><output id="${key}Out"></output><input id="${key}" type="range" min="0" max="100">`;root.append(row)}
+async function init(){const s=await chrome.storage.sync.get(defaults);for(const key in defaults){const el=document.querySelector('#'+key);el.checked=s[key];el.value=s[key];const out=document.querySelector('#'+key+'Out');if(out)out.textContent=s[key]+'%';el.addEventListener('input',async()=>{const v=el.type==='checkbox'?el.checked:Number(el.value);if(out)out.textContent=v+'%';await chrome.storage.sync.set({[key]:v})})}}init();
