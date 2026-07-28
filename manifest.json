@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Distortube",
   "version": "4.2.0.69",
-  "description":SUFFERING.",
+  "description": "SUFFURING!!",
   "permissions": ["storage"],
   "host_permissions": ["https://www.youtube.com/*"],
   "content_scripts": [{
