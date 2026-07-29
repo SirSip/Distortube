@@ -1,6 +1,6 @@
 # Distortube
 
-A chromium browser extention that makes youtube videos look like s##t!
+A chromium browser extention that makes youtube videos look like s##t! (but faster)
 
 ## Install
 
@@ -16,5 +16,5 @@ A chromium browser extention that makes youtube videos look like s##t!
 
 ## Notes
 
-- Doesn't run good on bad pc's
+- Works better on older devices
 - only works with chromium 
